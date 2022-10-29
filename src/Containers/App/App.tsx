@@ -50,6 +50,8 @@ function App() {
 
   const [cellClicked, setCellClicked] = useState(' ');
 
+  const [count, setCount] = useState(0);
+
 
   const clickCell = (index: number) =>{
     const cellsCopy = [...cells];
@@ -59,8 +61,10 @@ function App() {
       cellsCopy[index] = cellCopy;
       setCells(cellsCopy);
       setCellClicked(' ');
+      setCount(count+1);
     }
   }
+
 
   const cellsList: React.ReactNode = cells.map((cell: Cell, index: number) =>(
     <Cell
@@ -77,6 +81,7 @@ function App() {
       <div className="Container">
         {cellsList}
       </div>
+      <p>Tries: {count}</p>
     </div>
   );
 }
