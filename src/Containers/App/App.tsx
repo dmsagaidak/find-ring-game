@@ -9,44 +9,21 @@ interface Cell {
 }
 
 function App() {
-  const [cells, setCells] = useState([
-    {hasItem: false, clicked: false, id: 1},
-    {hasItem: false, clicked: false, id: 2},
-    {hasItem: false, clicked: false, id: 3},
-    {hasItem: false, clicked: false, id: 4},
-    {hasItem: false, clicked: false, id: 5},
-    {hasItem: false, clicked: false, id: 6},
-    {hasItem: false, clicked: false, id: 7},
-    {hasItem: false, clicked: false, id: 8},
-    {hasItem: false, clicked: false, id: 9},
-    {hasItem: false, clicked: false, id: 10},
-    {hasItem: false, clicked: false, id: 11},
-    {hasItem: false, clicked: false, id: 12},
-    {hasItem: false, clicked: false, id: 13},
-    {hasItem: false, clicked: false, id: 14},
-    {hasItem: false, clicked: false, id: 15},
-    {hasItem: false, clicked: false, id: 16},
-    {hasItem: false, clicked: false, id: 17},
-    {hasItem: false, clicked: false, id: 18},
-    {hasItem: false, clicked: false, id: 19},
-    {hasItem: false, clicked: false, id: 20},
-    {hasItem: false, clicked: false, id: 21},
-    {hasItem: false, clicked: false, id: 22},
-    {hasItem: false, clicked: false, id: 23},
-    {hasItem: false, clicked: false, id: 24},
-    {hasItem: false, clicked: false, id: 25},
-    {hasItem: false, clicked: false, id: 26},
-    {hasItem: false, clicked: false, id: 27},
-    {hasItem: false, clicked: false, id: 28},
-    {hasItem: false, clicked: false, id: 29},
-    {hasItem: false, clicked: false, id: 30},
-    {hasItem: false, clicked: false, id: 31},
-    {hasItem: false, clicked: false, id: 32},
-    {hasItem: false, clicked: false, id: 33},
-    {hasItem: false, clicked: false, id: 34},
-    {hasItem: false, clicked: false, id: 35},
-    {hasItem: false, clicked: false, id: 36}
-  ])
+
+  const createCells = () =>{
+    const cells: Cell[] = []
+    for (let i = 0; i < 36; i ++) {
+      const ids = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36];
+      const cell = {hasItem: false, clicked: false, id: ids[i]};
+      cells.push(cell);
+    }
+    const randomIndex = Math.floor(Math.random() * 35);
+    cells[randomIndex].hasItem = true;
+    return cells
+  };
+
+
+  const [cells, setCells] = useState(createCells());
 
   const [cellClicked, setCellClicked] = useState(' ');
 
@@ -66,6 +43,7 @@ function App() {
   }
 
 
+
   const cellsList: React.ReactNode = cells.map((cell: Cell, index: number) =>(
     <Cell
       key={cell.id}
@@ -82,6 +60,7 @@ function App() {
         {cellsList}
       </div>
       <p>Tries: {count}</p>
+      <button>Reset</button>
     </div>
   );
 }

@@ -10,12 +10,23 @@ interface CellProps extends React.PropsWithChildren {
 
 const Cell: React.FC<CellProps> = (props) => {
   const classNames = ['Cell'];
+  let itemClass = 'hidden';
   if(props.clicked){
     classNames.push('Cell-clicked');
+    if (props.hasItem){
+      itemClass = 'show';
+    }
   }
+
+
+
+
+
+
   return (
       <div className={classNames.join(' ')} onClick={props.open}>
-    </div>
+        <span className={itemClass}>o</span>
+      </div>
   );
 };
 

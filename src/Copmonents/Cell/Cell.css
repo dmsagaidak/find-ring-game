@@ -28,3 +28,12 @@
     background: white;
     display: inline-block;
 }
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
+    line-height: 30px;
+}
