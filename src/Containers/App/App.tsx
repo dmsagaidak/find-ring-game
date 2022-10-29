@@ -34,15 +34,18 @@ function App() {
     const cellsCopy = [...cells];
     if (cellClicked) {
       const cellCopy = {...cells[index]};
+      setCount(count+1);
       cellCopy.clicked = true;
       cellsCopy[index] = cellCopy;
       setCells(cellsCopy);
       setCellClicked(' ');
-      setCount(count+1);
     }
   }
 
-
+  const reset = () =>{
+    setCells(createCells);
+    setCount(0);
+  }
 
   const cellsList: React.ReactNode = cells.map((cell: Cell, index: number) =>(
     <Cell
@@ -60,7 +63,7 @@ function App() {
         {cellsList}
       </div>
       <p>Tries: {count}</p>
-      <button>Reset</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }
