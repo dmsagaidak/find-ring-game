@@ -1,0 +1,30 @@
+.Container {
+    margin: 20px;
+    padding: 2px;
+    width: 204px;
+    height: 204px;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Cell{
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    background: slategrey;
+    display: inline-block;
+}
+
+.Cell:hover{
+    background: #4e5864;
+    cursor: pointer;
+}
+
+.Cell-clicked{
+    width: 30px;
+    height: 30px;
+    border: 2px solid slategrey;
+    background: white;
+    display: inline-block;
+}
