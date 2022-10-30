@@ -29,6 +29,10 @@
     display: inline-block;
 }
 
+.Cell-clicked:hover{
+    background: white;
+}
+
 .hidden{
     display: none;
 }

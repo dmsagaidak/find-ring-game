@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ResetBtn from "../../Copmonents/ResetBtn/ResetBtn";
 import Cell from '../../Copmonents/Cell/Cell';
+import Tries from "../../Copmonents/Tries/Tries";
 import './App.css';
 
 interface Cell {
@@ -61,7 +62,7 @@ function App() {
       <div className="Container">
         {cellsList}
       </div>
-      <p>Tries: {count}</p>
+      <Tries triesCount={count}/>
       <ResetBtn reset={reset}/>
     </div>
   );
