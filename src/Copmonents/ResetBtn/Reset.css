@@ -1,0 +1,8 @@
+.reset-btn{
+    width: 75px;
+    height: 30px;
+    background: darkblue;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
